@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "a3712333-f998-48ff-adf4-82d7a80ba805",
+		"name": "Products API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34258238"
+	},
+	"item": [
+		{
+			"name": "Get Product By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/product/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"product",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "66931f9d218be3fc4f39461as"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Product By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66931f9d218be3fc4f39461a"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 00:48:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"66931f9d218be3fc4f39461a\",\n    \"name\": \"Macbook Pro 2024\",\n    \"description\": \"\",\n    \"price\": 2400\n}"
+				}
+			]
+		},
+		{
+			"name": "List All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List All Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 03:15:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"66931f9d218be3fc4f39461a\",\n        \"name\": \"Macbook Pro 2024\",\n        \"description\": \"\",\n        \"price\": 2400\n    },\n    {\n        \"id\": \"669321ea05c4046b76ed1d86\",\n        \"name\": \"Iphone 15 pro max\",\n        \"description\": \"\",\n        \"price\": 1500\n    },\n    {\n        \"id\": \"669326536d3928e3763e96d9\",\n        \"name\": \"Graphic Card RTX3050\",\n        \"description\": \"\",\n        \"price\": 230\n    },\n    {\n        \"id\": \"669326576d3928e3763e96da\",\n        \"name\": \"Graphic Card RTX3050\",\n        \"description\": \"\",\n        \"price\": 230\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Iphone 15 pro max\",\n    \"description\": \"The new iphone model\",\n    \"price\": 1500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Product By ID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Macbook Pro 2024\",\n    \"description\": \"The new macbook pro model\",\n    \"price\": 2400\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 00:45:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"000000000000000000000000\",\n    \"name\": \"Macbook Pro 2024\",\n    \"description\": \"\",\n    \"price\": 2400\n}"
+				}
+			]
+		}
+	]
+}

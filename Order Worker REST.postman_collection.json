@@ -1,0 +1,747 @@
+{
+	"info": {
+		"_postman_id": "bb918012-d05b-402b-a39e-9ca8243ad61e",
+		"name": "Order Worker REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34258238"
+	},
+	"item": [
+		{
+			"name": "Products API (GO)",
+			"item": [
+				{
+					"name": "List All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/product",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 03:15:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"66931f9d218be3fc4f39461a\",\n        \"name\": \"Macbook Pro 2024\",\n        \"description\": \"\",\n        \"price\": 2400\n    },\n    {\n        \"id\": \"669321ea05c4046b76ed1d86\",\n        \"name\": \"Iphone 15 pro max\",\n        \"description\": \"\",\n        \"price\": 1500\n    },\n    {\n        \"id\": \"669326536d3928e3763e96d9\",\n        \"name\": \"Graphic Card RTX3050\",\n        \"description\": \"\",\n        \"price\": 230\n    },\n    {\n        \"id\": \"669326576d3928e3763e96da\",\n        \"name\": \"Graphic Card RTX3050\",\n        \"description\": \"\",\n        \"price\": 230\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Iphone 15 pro max\",\n    \"description\": \"The new iphone model\",\n    \"price\": 1500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Product By ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Macbook Pro 2024\",\n    \"description\": \"The new macbook pro model\",\n    \"price\": 2400\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/product",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 00:45:17 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"000000000000000000000000\",\n    \"name\": \"Macbook Pro 2024\",\n    \"description\": \"\",\n    \"price\": 2400\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66931f9d218be3fc4f39461as"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Product By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/product/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "66931f9d218be3fc4f39461a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 00:48:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"66931f9d218be3fc4f39461a\",\n    \"name\": \"Macbook Pro 2024\",\n    \"description\": \"\",\n    \"price\": 2400\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Customers API (NEST)",
+			"item": [
+				{
+					"name": "List All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customer",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List All Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/customer",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-aqGiotmuMyMkWQBR9IXMMmh59p0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 03:15:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"669342b88f1f07bab74ae529\",\n        \"identificationNumber\": \"0604178541\",\n        \"name\": \"Daniel Samaniego\",\n        \"email\": \"jdsamaniego2@gmail.com\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identificationNumber\": \"2604178543\",\n    \"name\": \"Carlos Samaniego\",\n    \"email\": \"csamaniego@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/customer",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3001/customer",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-S+soS8qr1JTn+oX5L3t5rtj9Lhs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 03:15:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"669342b88f1f07bab74ae529\",\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Customer By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customer/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "669342b88f1f07bab74ae529"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customer By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/customer/id/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"customer",
+										"id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "669342b88f1f07bab74ae529"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-S+soS8qr1JTn+oX5L3t5rtj9Lhs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 03:21:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"669342b88f1f07bab74ae529\",\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Customer By Identification Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customer/identification-number/:identificationNumber",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer",
+								"identification-number",
+								":identificationNumber"
+							],
+							"variable": [
+								{
+									"key": "identificationNumber",
+									"value": "0604178541"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customer By Identification Number",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/customer/identification-number/:identificationNumber",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"customer",
+										"identification-number",
+										":identificationNumber"
+									],
+									"variable": [
+										{
+											"key": "identificationNumber",
+											"value": "0604178541"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-S+soS8qr1JTn+oX5L3t5rtj9Lhs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 06:55:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"669342b88f1f07bab74ae529\",\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Customer By Identification GraphQL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query CustomerByIdentificationNumber {\n    customerByIdentificationNumber(identificationNumber: \"2604178543\") {\n        email\n        id\n        identificationNumber\n        name\n    }\n}\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customer By Identification GraphQL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query CustomerByIdentificationNumber {\n    customerByIdentificationNumber(identificationNumber: \"2604178543\") {\n        email\n        id\n        identificationNumber\n        name\n    }\n}\n",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-QfF1cgDMtuUN1vIiG+C7Ir+RdCY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 Jul 2024 07:06:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"customerByIdentificationNumber\": {\n            \"email\": \"csamaniego@gmail.com\",\n            \"id\": \"6694c9bfcd40d7ca49790693\",\n            \"identificationNumber\": \"2604178543\",\n            \"name\": \"Carlos Samaniego\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orders (Kafka With HTTP)",
+			"item": [
+				{
+					"name": "Send Order To Kafka",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.kafka.json.v2+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"records\": [\n      {\n        \"value\": {\n          \"productId\": \"6694942d4cccb059a0c362a7\",\n          \"customerIdentification\": \"2604178543\",\n          \"quantity\": 4,\n          \"price\": 13\n        }\n      }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38082/topics/order-topic",
+							"host": [
+								"localhost"
+							],
+							"port": "38082",
+							"path": [
+								"topics",
+								"order-topic"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Request Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.kafka.json.v2+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"records\": [\n      {\n        \"value\": {\n          \"productId\": \"6694c9bbe89589f6348b8bf1\",\n          \"customerIdentification\": \"2604178543\",\n          \"quantity\": 4,\n          \"price\": 13\n        }\n      }\n    ]\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38082/topics/order-topic",
+									"host": [
+										"localhost"
+									],
+									"port": "38082",
+									"path": [
+										"topics",
+										"order-topic"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 15 Jul 2024 07:03:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.kafka.v2+json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding, User-Agent"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"offsets\": [\n        {\n            \"partition\": 0,\n            \"offset\": 1,\n            \"error_code\": null,\n            \"error\": null\n        }\n    ],\n    \"key_schema_id\": null,\n    \"value_schema_id\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

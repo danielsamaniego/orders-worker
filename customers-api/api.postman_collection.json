@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "428f1637-708e-40d6-b2b5-7bcb54757513",
+		"name": "Customers API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34258238"
+	},
+	"item": [
+		{
+			"name": "Get Customer By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/customer/id/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"customer",
+						"id",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "669342b88f1f07bab74ae529"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Customer By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customer/id/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "669342b88f1f07bab74ae529"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-S+soS8qr1JTn+oX5L3t5rtj9Lhs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 03:21:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"669342b88f1f07bab74ae529\",\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Customer By Identification Number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/customer/identification-number/:identificationNumber",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"customer",
+						"identification-number",
+						":identificationNumber"
+					],
+					"variable": [
+						{
+							"key": "identificationNumber",
+							"value": "0604178541"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Customer By Identification Number",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customer/identification-number/:identificationNumber",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer",
+								"identification-number",
+								":identificationNumber"
+							],
+							"variable": [
+								{
+									"key": "identificationNumber",
+									"value": "0604178541"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-S+soS8qr1JTn+oX5L3t5rtj9Lhs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 06:55:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"669342b88f1f07bab74ae529\",\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identificationNumber\": \"2604178543\",\n    \"name\": \"Carlos Samaniego\",\n    \"email\": \"csamaniego@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/customer",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-S+soS8qr1JTn+oX5L3t5rtj9Lhs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 03:15:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"669342b88f1f07bab74ae529\",\n    \"identificationNumber\": \"0604178541\",\n    \"name\": \"Daniel Samaniego\",\n    \"email\": \"jdsamaniego2@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List All Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List All Customers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/customer",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"82-aqGiotmuMyMkWQBR9IXMMmh59p0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 14 Jul 2024 03:15:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"669342b88f1f07bab74ae529\",\n        \"identificationNumber\": \"0604178541\",\n        \"name\": \"Daniel Samaniego\",\n        \"email\": \"jdsamaniego2@gmail.com\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

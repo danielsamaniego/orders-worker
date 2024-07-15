@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  kafka-service:
+    image: lensesio/fast-data-dev:latest
+    ports:
+      - '38082:8082'
+      - '9092:9092'
+    environment:
+      - ADV_HOST=kafka-service # It just allows you to access the Kafka through docker network. 
+      #- ADV_HOST=localhost If you want to access it from outside or localhost, you need to change it to your IP address.
+      - RUNTESTS=0
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+
+  products-api:
+    build: ./products-api
+    ports:
+      - "8082:8080"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017
+      - API_PORT=8080
+    depends_on:
+      - mongo
+
+  customers-api:
+    build: ./customers-api
+    ports:
+      - "3001:3001"
+    environment:
+      - DB_URL=mongodb://mongo:27017
+      - PORT=3001
+    depends_on:
+      - mongo
+
+  order-worker:
+    build: ./order-worker
+    ports:
+      - "8083:8081"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-service:9092
+      - KAFKA_AUTO_OFFSET_RESET=earliest
+      - MONGODB_URI=mongodb://mongo:27017/ordersdb
+      - API_PRODUCT_BASE_URL=http://products-api
+      - API_PRODUCT_PORT=8080
+      - API_CUSTOMER_BASE_URL=http://customers-api
+      - API_CUSTOMER_PORT=3001
+    depends_on:
+      - mongo
+      - kafka-service
+      - products-api
+      - customers-api

@@ -1,0 +1,3 @@
+spring.application.name=order-worker # No need to change
+spring.data.mongodb.host=localhost # host of mongodb server (localhost if you run it locally)
+spring.data.mongodb.port=27018 # port of mongodb server

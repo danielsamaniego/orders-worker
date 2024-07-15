@@ -1,0 +1,29 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of the go coverage tool
+*.cover
+*.coverprofile
+
+# IDE files
+.idea/
+.vscode/
+
+# Dependency directories (remove the comment below if you are using Go modules)
+vendor/
+
+# MacOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+*.log.*
+
+main

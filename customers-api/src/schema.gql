@@ -1,0 +1,26 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CustomerInput {
+  email: String
+  identificationNumber: String!
+  name: String!
+}
+
+type CustomerOutput {
+  email: String!
+  id: ID!
+  identificationNumber: String!
+  name: String!
+}
+
+type Mutation {
+  createCustomer(input: CustomerInput!): CustomerOutput!
+}
+
+type Query {
+  customer(id: String!): CustomerOutput!
+  customerByIdentificationNumber(identificationNumber: String!): CustomerOutput!
+  customers: [CustomerOutput!]!
+}
