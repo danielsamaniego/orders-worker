@@ -21,6 +21,10 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.5.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'com.github.valfirst:slf4j-test:3.0.0'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+    testImplementation 'org.mockito:mockito-core:5.3.1'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.3.1'
 }
 
 tasks.named('test') {
